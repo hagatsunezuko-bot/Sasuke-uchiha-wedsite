@@ -1,80 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#09090d" />
-  <meta name="description" content="Sasuke Uchiha — discover anime, track your watchlist, and explore the shinobi world." />
-  <title>Sasuke Uchiha | Anime Hub</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="hero">
-    <nav class="top-nav">
-      <a class="brand" href="#" aria-label="Sasuke Uchiha home"><span>Sasuke</span><b>Uchiha</b></a>
-      <div class="nav-links"><a href="#discover">Discover</a><a href="#continue">Continue</a><a href="#watchlist">Watchlist</a></div>
-      <button class="sign-in" id="signInBtn">Sign in</button>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
-    </nav>
-    <div class="hero-copy">
-      <p class="eyebrow"><span class="dot"></span> THE SHINOBI ANIME ARCHIVE</p>
-      <h1>Enter the<br><em>shadow realm.</em></h1>
-      <p class="hero-text">Your next anime obsession starts here. Search, discover, and keep your journey moving.</p>
-      <a class="primary-btn" href="#discover">Explore anime <span>↗</span></a>
-    </div>
-    <div class="hero-mark" aria-hidden="true"><div class="ring ring-a"></div><div class="ring ring-b"></div><div class="eye">✦</div><div class="slash slash-a"></div><div class="slash slash-b"></div><div class="hero-label">UCHIHA<br><small>EST. IN THE SHADOWS</small></div></div>
-    <div class="hero-bottom"><span>01 / DISCOVER</span><span>VIOLET • SILVER • CRIMSON</span></div>
-  </header>
-
-  <main class="app-shell">
-    <aside class="sidebar">
-      <a class="brand side-brand" href="#"><span>Sasuke</span><b>Uchiha</b></a>
-      <p class="side-caption">YOUR SPACE</p>
-      <a class="side-link active" href="#discover">◈ <span>Discover</span></a>
-      <a class="side-link" href="#continue">▣ <span>Continue watching</span></a>
-      <a class="side-link" href="#watchlist">♡ <span>My watchlist</span></a>
-      <a class="side-link" href="#genres">⌘ <span>Genres</span></a>
-      <a class="side-link" href="#news">◉ <span>Anime news</span></a>
-      <div class="side-divider"></div>
-      <p class="side-caption">QUICK FILTER</p>
-      <label class="filter-label" for="genreFilter">Genre</label>
-      <select id="genreFilter"><option value="all">All genres</option><option>Action</option><option>Fantasy</option><option>Adventure</option><option>Thriller</option><option>Comedy</option></select>
-      <label class="filter-label" for="statusFilter">Status</label>
-      <select id="statusFilter"><option value="all">All status</option><option value="Ongoing">Ongoing</option><option value="Complete">Complete</option></select>
-      <button class="filter-btn" id="resetFilters">Reset filters</button>
-      <div class="sidebar-note"><span>✦</span><p>“Those who forgive themselves… are the strongest.”</p><small>— SHINOBI WISDOM</small></div>
-    </aside>
-
-    <section class="content">
-      <div class="content-top">
-        <div><p class="eyebrow">YOUR ANIME UNIVERSE</p><h2 id="discover">Discover <em>something epic.</em></h2></div>
-        <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search anime, genre..." aria-label="Search anime"><kbd>/</kbd></div>
-      </div>
-      <div class="featured">
-        <div class="featured-art"><div class="featured-sigil">うちは</div><div class="feature-lines"></div><div class="feature-copy"><span class="pill">FEATURED PICK</span><h3>NARUTO<br><em>SHIPPUDEN</em></h3><p>A path of rivalry, bonds, and the will to never give up.</p><div class="feature-actions"><button class="watch-btn" data-title="Naruto Shippuden">▶ Add to watchlist</button><a href="#continue" class="text-btn">Explore details ↗</a></div></div><div class="feature-number">01</div></div>
-        <div class="feature-side"><span class="mini-label">THIS WEEK'S MOOD</span><div class="mood-symbol">月</div><h4>Quiet focus.<br><em>Unmatched power.</em></h4><p>Curated for your next late-night binge.</p><div class="mood-line"><span></span></div><small>SHINOBI SELECTION / 2026</small></div>
-      </div>
-
-      <section class="section-block" id="continue">
-        <div class="section-heading"><div><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h3>Continue watching</h3></div><a href="#discover" class="view-all">View all ↗</a></div>
-        <div class="anime-grid" id="animeGrid">
-          <article class="anime-card" data-title="Jujutsu Kaisen" data-genre="Action" data-status="Complete"><div class="poster poster-violet"><span class="poster-mark">呪</span><span class="episode-tag">EP 06 · 24 MIN</span><button class="play" aria-label="Play Jujutsu Kaisen">▶</button></div><div class="card-info"><div><h4>Jujutsu Kaisen</h4><p>Dark fantasy · Action</p></div><button class="add-btn" data-title="Jujutsu Kaisen" aria-label="Add Jujutsu Kaisen to watchlist">＋</button></div><div class="progress"><span style="width:64%"></span></div></article>
-          <article class="anime-card" data-title="Demon Slayer" data-genre="Adventure" data-status="Complete"><div class="poster poster-red"><span class="poster-mark">鬼</span><span class="episode-tag">EP 11 · 23 MIN</span><button class="play" aria-label="Play Demon Slayer">▶</button></div><div class="card-info"><div><h4>Demon Slayer</h4><p>Adventure · Fantasy</p></div><button class="add-btn" data-title="Demon Slayer" aria-label="Add Demon Slayer to watchlist">＋</button></div><div class="progress"><span style="width:42%"></span></div></article>
-          <article class="anime-card" data-title="Attack on Titan" data-genre="Action" data-status="Complete"><div class="poster poster-silver"><span class="poster-mark">進</span><span class="episode-tag">EP 08 · 24 MIN</span><button class="play" aria-label="Play Attack on Titan">▶</button></div><div class="card-info"><div><h4>Attack on Titan</h4><p>Action · Thriller</p></div><button class="add-btn" data-title="Attack on Titan" aria-label="Add Attack on Titan to watchlist">＋</button></div><div class="progress"><span style="width:78%"></span></div></article>
-          <article class="anime-card" data-title="Spy x Family" data-genre="Comedy" data-status="Ongoing"><div class="poster poster-crimson"><span class="poster-mark">家</span><span class="episode-tag">EP 04 · 24 MIN</span><button class="play" aria-label="Play Spy x Family">▶</button></div><div class="card-info"><div><h4>Spy x Family</h4><p>Comedy · Action</p></div><button class="add-btn" data-title="Spy x Family" aria-label="Add Spy x Family to watchlist">＋</button></div><div class="progress"><span style="width:25%"></span></div></article>
-        </div>
-        <p class="empty-state" id="emptyState" hidden>No anime matches those filters. Try another search.</p>
-      </section>
-
-      <section class="section-block watchlist-block" id="watchlist">
-        <div class="section-heading"><div><p class="eyebrow">SAVED FOR LATER</p><h3>My watchlist <span class="count" id="watchCount">0</span></h3></div></div>
-        <div class="watchlist-items" id="watchlistItems"><p class="watchlist-empty">Your watchlist is empty. Tap the ＋ on any anime to save it here.</p></div>
-      </section>
-      <footer><span class="brand footer-brand"><span>Sasuke</span><b>Uchiha</b></span><span>FAN-MADE DEMO · BUILT FOR ANIME LOVERS</span><a href="#top">Back to top ↑</a></footer>
-    </section>
-  </main>
-  <div class="toast" id="toast" role="status"></div>
-  <script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sasuke Uchiha | Anime Vault</title><link rel="stylesheet" href="style.css"></head><body>
+<header><a class="brand" href="#"><span>SASUKE</span> <b>UCHIHA</b><small>ANIME VAULT</small></a><button id="adminOpen">Admin login</button></header>
+<section class="hero"><p class="eyebrow">THE SHINOBI VIDEO ARCHIVE</p><h1>Your anime.<br><em>Your world.</em></h1><p>Discover episodes in a dark violet, silver, and crimson anime vault.</p><a class="button" href="#library">Explore library ↓</a><div class="sigil">うちは<br>✦</div></section>
+<main id="library"><div class="heading"><div><p class="eyebrow">CURATED FOR YOU</p><h2>Video library</h2></div><input id="search" placeholder="Search anime or episode..."></div><p id="notice"></p><section id="videoGrid" class="grid"><p class="empty">Connect Firebase using the README to enable the library.</p></section></main>
+<footer>SASUKE UCHIHA <span>VIOLET · SILVER · CRIMSON</span></footer>
+<div class="modal" id="loginModal"><div class="dialog"><button class="close" id="loginClose">×</button><p class="eyebrow">RESTRICTED AREA</p><h2>Admin login</h2><form id="loginForm"><label>Email<input id="email" type="email" required></label><label>Password<input id="password" type="password" required></label><button class="button full">Sign in</button></form><p id="loginError" class="error"></p></div></div>
+<div class="modal" id="adminModal"><div class="dialog wide"><button class="close" id="adminClose">×</button><p class="eyebrow">ADMIN CONTROL ROOM</p><h2>Upload a video</h2><p class="muted">Upload only videos you own or are authorized to distribute. Cloud storage may cost money.</p><form id="uploadForm"><label>Anime title<input id="animeTitle" required maxlength="100"></label><div class="two"><label>Episode<input id="episode" placeholder="Episode 01"></label><label>Genre<input id="genre" placeholder="Action"></label></div><label>Description<textarea id="description" rows="2"></textarea></label><label>Video file (MP4/WebM/Ogg)<input id="videoFile" type="file" accept="video/mp4,video/webm,video/ogg" required></label><div class="track"><div id="progress"></div></div><p id="uploadStatus" class="muted"></p><button id="uploadBtn" class="button full">Upload video</button></form><div class="logout"><span id="adminEmail"></span><button id="logoutBtn">Sign out</button></div></div></div>
+<script type="module" src="app.js"></script></body></html>

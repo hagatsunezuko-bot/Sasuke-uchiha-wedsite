@@ -1,32 +1,33 @@
-# Sasuke Uchiha — Anime Hub
+# Sasuke Uchiha Anime Vault — video upload + admin
 
-A responsive anime discovery/search interface with a Sasuke-inspired violet, silver, black, and crimson theme.
+This site uses GitHub Pages for the interface and Firebase for login, video storage, and video metadata. **Uploads will not work until you set up Firebase and add your config to app.js.**
 
-## Features
-- Responsive desktop and mobile layout
-- Search by anime title or genre
-- Genre and status filters
-- Interactive watchlist (stored in the current page session; refresh clears it)
-- Mobile navigation and toast messages
-- No build tools or dependencies required
+## 1. Create Firebase project
+1. Open https://console.firebase.google.com/ and create a project.
+2. Add a Web app and copy its config.
+3. In `app.js`, replace `PASTE_API_KEY`, `PASTE_PROJECT_ID`, `PASTE_STORAGE_BUCKET`, `PASTE_SENDER_ID`, and `PASTE_APP_ID` with your actual config values.
 
-## Run locally
-Open `index.html` in your browser.
+## 2. Create admin login
+1. Firebase Console → Build → Authentication → Get started → Sign-in method → enable Email/Password.
+2. Authentication → Users → Add user. Make an admin email and password.
+3. Copy that user's UID from the Users page.
+4. Firestore Database → Create database.
+5. Create collection `admins`. Create a document whose **document ID is exactly the admin user's UID**. Add a field like `role` (string) = `admin`. The project owner does this in the Firebase Console.
+6. Publish the contents of `firestore.rules` in Firestore → Rules.
 
-## Publish free with GitHub Pages
-1. Sign in to GitHub and create a **new public repository** named `sasuke-uchiha-anime` (or another name).
-2. Upload `index.html`, `style.css`, `script.js`, and this README to the repository's root. You can upload the files directly in the GitHub website using **Add file → Upload files**.
-3. Open the repository **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select branch **main** and folder **/(root)**, then click **Save**.
-6. Wait a minute or two. The Pages panel will show your live website URL, usually:
-   `https://YOUR-USERNAME.github.io/sasuke-uchiha-anime/`
+## 3. Set up video storage
+1. Firebase Console → Build → Storage → Get started.
+2. Publish the contents of `storage.rules` in Storage → Rules.
+3. Review Firebase's current plan, billing requirements, quotas, and download costs before uploading. Videos use storage and bandwidth.
 
-If the repository is named `YOUR-USERNAME.github.io`, the URL is instead:
-`https://YOUR-USERNAME.github.io/`
+## 4. Upload to GitHub
+Upload these files to the root of your existing GitHub repository: `index.html`, `style.css`, `app.js`, `firestore.rules`, `storage.rules`, and `README.md`. GitHub → repository Settings → Pages → Deploy from a branch → `main` → `/(root)` → Save.
 
-## Customization
-- Change colors in `:root` at the top of `style.css`.
-- Edit anime cards and feature text in `index.html`.
-- Add real streaming links only for services/content you are authorized to link to.
-- This is a front-end demo: sign-in and playback are placeholders, and watchlist data is not saved permanently.
+## 5. Use the admin panel
+Open the published site, tap Admin login, sign in, then choose title, episode, genre, description, and a video file. Supported types are MP4, WebM, and Ogg; demo upload limit is 500 MB. MP4 encoded with H.264 video and AAC audio is usually the most compatible.
+
+## Security and limitations
+- Only users whose UID is listed as a document ID in `admins` can upload/delete.
+- Never make Storage/Firestore writable by everyone, and never put private service-account keys in browser code.
+- Public visitors can play uploaded videos. Only upload content you own or are authorized to distribute.
+- This is a starter project, not a production streaming service; it has no adaptive streaming, subtitles, transcoding, or upload moderation. Cloud usage can cost money.
