@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebas
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, deleteDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-storage.js";
-const firebaseConfig={apiKey:"AIzaSyAxhUy4P-X2CpIDFPGUk1_cuONpt0LvKQw",authDomain:"sasuke-uchiha-website.firebaseapp.com",projectId:"sasuke-uchiha-website.firebaseapp.com",storageBucket:"sasuke-uchiha-website.firebasestorage.app",messagingSenderId:"1039341123898",appId:"1:1039341123898:web:76993e8fa4b9e26fa47803"};
+const firebaseConfig={apiKey:"AIzaSyAxhUy4P-X2CpIDFPGUk1_cuONpt0LvKQw",authDomain:"sasuke-uchiha-website.firebaseapp.com",projectId:"sasuke-uchiha-website",storageBucket:"sasuke-uchiha-website.firebasestorage.app",messagingSenderId:"1039341123898",appId:"1:1039341123898:web:76993e8fa4b9e26fa47803"};
 const ready=!Object.values(firebaseConfig).some(v=>v.startsWith("PASTE_")), $=id=>document.getElementById(id);
 let auth,db,storage,user=null,admin=false,videos=[];
 const msg=s=>$("notice").textContent=s, open=id=>$(id).classList.add("open"), close=id=>$(id).classList.remove("open");
