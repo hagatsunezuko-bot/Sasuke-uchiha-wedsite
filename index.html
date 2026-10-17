@@ -5,7 +5,9 @@
 <footer>SASUKE UCHIHA <span>VIOLET · SILVER · CRIMSON</span></footer>
 <div class="modal" id="loginModal"><div class="dialog"><button class="close" id="loginClose">×</button><p class="eyebrow">RESTRICTED AREA</p><h2>Admin login</h2><form id="loginForm"><label>Email<input id="email" type="email" required></label><label>Password<input id="password" type="password" required></label><button class="button full">Sign in</button></form><p id="loginError" class="error"></p></div></div>
 <div class="modal" id="adminModal"><div class="dialog wide"><button class="close" id="adminClose">×</button><p class="eyebrow">ADMIN CONTROL ROOM</p><h2>Upload a video</h2><p class="muted">Upload only videos you own or are authorized to distribute. Cloud storage may cost money.</p><form id="uploadForm"><label>Anime title<input id="animeTitle" required maxlength="100"></label><div class="two"><label>Episode<input id="episode" placeholder="Episode 01"></label><label>Genre<input id="genre" placeholder="Action"></label></div><label>Description<textarea id="description" rows="2"></textarea></label><label>Video file (MP4/WebM/Ogg)<input id="videoFile" type="file" accept="video/mp4,video/webm,video/ogg" required></label><div class="track"><div id="progress"></div></div><p id="uploadStatus" class="muted"></p><button id="uploadBtn" class="button full">Upload video</button></form><div class="logout"><span id="adminEmail"></span><button id="logoutBtn">Sign out</button></div></div></div>
-<script type="module" src="app.js"></script><section id="videos" class="library">
+<script type="module" src="app.js"></script>
+</body>
+</html>
   <h2>🎬 Sasuke Anime Videos</h2>
   <p>Watch your favourite anime videos!</p>
   <div class="video-grid">
